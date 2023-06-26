@@ -9,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  z-index: 10000000000000000000000000000;
+  z-index: 999999999999999999;
   background-color: #fafafa;
 }
 
@@ -19,13 +19,13 @@ code {
 }
 
 .index {
-  z-index: 10000000000000000000000000000;
+  z-index: 999999999999 !important;
 }
 
 .index-100 {
-  z-index: 100000000000000000000000000000000;
+  z-index: 99999999999999 !important;
 }
 
 .index-200 {
-  z-index: 999999999999999999999999999999999999999999999999999;
+  z-index: 9999999999999999 !important;
 }
