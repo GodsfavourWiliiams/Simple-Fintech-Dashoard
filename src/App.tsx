@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, startTransition } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 
 import SignIn from "./pages/Authentication/SignIn";
@@ -15,6 +15,13 @@ const Wallet = lazy(() => import("./pages/Wallet"));
 
 function App() {
   const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    startTransition(() => {
+      navigate(path);
+    });
+  };
+
   return (
     <>
       <Notification />
@@ -33,12 +40,12 @@ function App() {
                 key.
               </p>
               <button
-                onClick={() => navigate("/signin")}
+                onClick={() => handleNavigation("/signin")}
                 className="py-4 px-10 text-lg rounded-md text-white bg-[#1F28EB]">
                 Login
               </button>
               <button
-                onClick={() => navigate("/dashboard")}
+                onClick={() => handleNavigation("/dashboard")}
                 className="py-4 px-10 text-lg rounded-md text-white bg-[#1F28EB]">
                 Go to Dashboard
               </button>
